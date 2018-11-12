@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'pages#dashboard'
   resources :products do
-    resources :order_items, only: [:create, :edit, :update, :destroy]
+    resources :order_items, only: [:create]
   end
-
+  resources :order_items, only: [:edit, :update, :destroy]
   resources :orders, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
