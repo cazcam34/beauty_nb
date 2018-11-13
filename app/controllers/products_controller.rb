@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
-<<<<<<< HEAD
-=======
+
   before_action :set_product, only: [:show, :edit, :update]
->>>>>>> master
 
   def index
     @products = Product.all
@@ -17,12 +15,9 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
-<<<<<<< HEAD
-=======
 
   def show
   end
->>>>>>> master
 
   def new
     @product = Product.new
@@ -38,8 +33,6 @@ class ProductsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
   def edit
   end
 
@@ -51,7 +44,6 @@ class ProductsController < ApplicationController
     end
   end
 
->>>>>>> master
   private
 
   def set_product
