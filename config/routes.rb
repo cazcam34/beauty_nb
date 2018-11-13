@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
 
-  get '/dashboard', to: 'pages#dashboard'
+  authenticated do
+  	root :to => 'pages#dashboard', as: :authenticated
+	end
+
+	root to: 'pages#home'
+
+	# root :to => 'home#static_page'
+
+ #  get '/dashboard', to: 'pages#dashboard'
   resources :products do
     resources :order_items, only: [:create]
   end

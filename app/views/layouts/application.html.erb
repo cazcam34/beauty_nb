@@ -10,6 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= render 'shared/navbar' if current_user.present? %>
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
     <%= yield %>
@@ -17,3 +18,5 @@
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
+
