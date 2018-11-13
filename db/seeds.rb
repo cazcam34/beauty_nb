@@ -1,15 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'json'
 
+# puts 'Cleaning database...'
+# Product.destroy_all
 
-Product.create!(
-  name: "Living Proof Shampoo",
-  description: "Wonderful shampoo",
-  price: 17,
-  user_id: 1
-)
+puts 'Creating products...'
+
+data = JSON.load(open("https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation"))
+
+data[0...1].each do |product|
+	p product["name"]
+	p product["description"]
+	p product["price"].to_i
+	p product["image_link"]
+	# Product.create(name: product["name"], description: product["description"], price: product["price"].to_i, photo: product["image_link"], user_id: 1)
+end
+
+puts 'Finished!'
+
