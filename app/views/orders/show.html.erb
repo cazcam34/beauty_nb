@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Your Cart</h1>
+    <h3>Order number #<%= @order.id %></h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="column">Product</th>
+          <th scope="column">Quantity</th>
+          <th scope="column">Edit from Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.order_items.each do |order| %>
+          <tr>
+            <td> <%= Product.find(order.product_id).name %> </td>
+            <td> <%= current_user.present? %> </td>
+            <td> <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item_path(order), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
