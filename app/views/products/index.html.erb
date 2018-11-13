@@ -1,6 +1,14 @@
 <div class="wrapper">
   <div class="container">
     <h1>Products index page</h1>
+    <div class="col-sm-4">
+      <%= form_tag products_path, { method: :get, id: "search-form" } do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Living Proof shampoo..."
+        %>
+      <% end %>
     <div class="cards-container">
       <% @products.each do |product| %>
       <div class="card-body">
@@ -16,5 +24,8 @@
     </div>
   </div>
 </div>
+
+
+
 
 
