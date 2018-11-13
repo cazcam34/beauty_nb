@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Products index page</h1>
+    <div class="cards-container">
+      <% @products.each do |product| %>
+      <div class="card-body">
+        <!-- this is where the photo will go -->
+      </div>
+      <div class="card-content">
+        <h3><%= product.name  %></h3>
+        <p><%= product.description %></p>
+        <p>$ <%= product.price %></p>
+      </div>
+      <%= link_to "link to product", product_path(product), class: 'card-link' %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
