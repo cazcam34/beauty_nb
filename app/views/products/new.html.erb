@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>List your product</h1>
+    <%= simple_form_for [@product] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.submit "List Your Product", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
