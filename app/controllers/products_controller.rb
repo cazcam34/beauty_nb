@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     # ...
+    @order_item = OrderItem.new
   end
 
   def new

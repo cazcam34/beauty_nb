@@ -6,4 +6,10 @@ class User < ApplicationRecord
   has_many :order_items, through: :orders
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_create :create_cart
+
+  def create_cart
+    @order = Order.create(user: self, status: "pending")
+  end
 end
