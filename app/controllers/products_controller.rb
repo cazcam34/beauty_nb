@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     @product.save
   end
+  
+  def index
+    @products = Product.all
+  end
 
   private
 
