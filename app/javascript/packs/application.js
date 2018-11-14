@@ -1,7 +1,7 @@
 import "bootstrap";
 
-import { initSearchOnKeyUp } from '../components/search';
-initSearchOnKeyUp();
+// import { initSearchOnKeyUp } from '../components/search';
+// initSearchOnKeyUp();
 
-import { clearFormAfterEnter } from '../components/search';
-clearFormAfterEnter();
+// import { clearFormAfterEnter } from '../components/search';
+// clearFormAfterEnter();

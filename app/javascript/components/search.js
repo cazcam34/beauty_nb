@@ -12,12 +12,12 @@
 // work in progress
 
 
-function clearFormAfterEnter() {
-  const form = document.querySelector('search-form');
-  form.addEventListener('Enter', () => {
+// function clearFormAfterEnter() {
+//   const form = document.querySelector('search-form');
+//   form.addEventListener('Enter', () => {
 
-    form.reset();
-  });
-}
+//     form.reset();
+//   });
+// }
 
-export { clearFormAfterEnter };
+// export { clearFormAfterEnter };
