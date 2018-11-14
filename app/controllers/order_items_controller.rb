@@ -11,13 +11,20 @@ class OrderItemsController < ApplicationController
     redirect_to product_path(params[:product_id])
   end
 
+  def destroy
+    @order_item = OrderItem.find(params[:id])
+    order = @order_item.order
+    @order_item.destroy
+    redirect_to order_path(order)
+  end
+
   private
 
   def set_order
     @order = current_user.orders.find_by(status: "pending")
   end
 
-  # def order_item_params
-  #   params.require(:order_item).permit(:product_id)
-  # end
+  def order_item_params
+    params.require(:order_item).permit(:product_id, :id)
+  end
 end
