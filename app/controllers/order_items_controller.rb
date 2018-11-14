@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  before_action :set_order, only: [:create]
+  before_action :set_order, only: [:create, :update]
 
   def create
     if !@order
@@ -15,6 +15,12 @@ class OrderItemsController < ApplicationController
     @order.save
     flash[:notice] = 'Item has been added to cart'
     redirect_to product_path(params[:product_id])
+  end
+
+  def update
+    @order_item = OrderItem.find(params[:id])
+    @order_item.update(order_item_params)
+    redirect_to order_path(@order)
   end
 
   def destroy
@@ -36,7 +42,7 @@ class OrderItemsController < ApplicationController
   end
 
   def order_item_params
-    params.require(:order_item).permit(:product_id, :id)
+    params.require(:order_item).permit(:product_id, :id, :qty)
 
   end
 end
