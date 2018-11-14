@@ -7,20 +7,11 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="/" method="delete" class="navbar-wagon-item navbar-wagon-link">Dashboard</a>
-    <a href="/products/new" class="navbar-wagon-item navbar-wagon-link">Add a product</a>
+    <%= link_to "Sign In", user_session_path, :method => 'post', class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Register", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://images.unsplash.com/photo-1496256654245-8f3d0ef3bebe" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">My products</a></li>
-          <li><a href="#">My purchases</a></li>
-          <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
-        </ul>
-      </div>
     </div>
   </div>
 
@@ -29,8 +20,8 @@
     <div class="dropdown">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="/" method="delete">Dashboard</a></li>
-        <li><a href="products/new">Add a product</a></li>
+        <li><%= link_to "Sign In", user_session_path, :method => 'post', class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Register", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
