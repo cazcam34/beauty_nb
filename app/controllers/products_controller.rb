@@ -31,6 +31,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user != @product.user
+      redirect_to(@product, notice: "You cannot edit this product")
+    end
   end
 
   def update
@@ -42,8 +45,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to products_path
+    if current_user != @product.user
+      redirect_to(@product, notice: "You cannot delete this product")
+    else
+      @product.destroy
+      redirect_to products_path
+    end
   end
 
   private
