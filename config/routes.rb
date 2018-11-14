@@ -7,13 +7,12 @@ Rails.application.routes.draw do
 
 	root to: 'pages#home'
 
-	# root :to => 'home#static_page'
-
- #  get '/dashboard', to: 'pages#dashboard'
   resources :products do
     resources :order_items, only: [:create]
   end
   resources :order_items, only: [:edit, :update, :destroy]
   resources :orders, only: [:show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  patch 'orders/:id', to: 'orders#checkout', as: :orders_checkout
+  get 'orders/:id/complete', to: 'orders#complete', as: :orders_complete
 end

@@ -12,6 +12,7 @@ class OrderItemsController < ApplicationController
     else
       @order_item = OrderItem.create(product_id: params[:product_id], order_id: @order.id)
     end
+    @order.save
     flash[:notice] = 'Item has been added to cart'
     redirect_to product_path(params[:product_id])
   end
@@ -32,6 +33,7 @@ class OrderItemsController < ApplicationController
 
   def set_order_item
     @order_item = @order.order_items.find_by(product_id: params[:product_id])
+  end
 
   def order_item_params
     params.require(:order_item).permit(:product_id, :id)
