@@ -1,0 +1,10 @@
+.remove-submit-btn-style {
+  background: none;
+  border: none;
+  color: #43c0ac;
+  font-size: 13px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
