@@ -12,4 +12,12 @@ class User < ApplicationRecord
   def create_cart
     @order = Order.create(user: self, status: "pending")
   end
+
+  def find_or_create_pending_order
+    @order = orders.find_by(status: "pending")
+    if @order.nil?
+      @order = Order.create(user: self, status: "pending")
+    end
+    return @order
+  end
 end
