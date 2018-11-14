@@ -12,6 +12,7 @@ class OrderItemsController < ApplicationController
     else
       @order_item = OrderItem.create(product_id: params[:product_id], order_id: @order.id)
     end
+    @order.save
     flash[:notice] = 'Item has been added to cart'
     redirect_to product_path(params[:product_id])
   end

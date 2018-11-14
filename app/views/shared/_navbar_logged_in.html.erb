@@ -5,6 +5,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+    <%= link_to "Cart", order_path(current_user.find_or_create_pending_order) %>
     <a href="/" method="delete" class="navbar-wagon-item navbar-wagon-link">Dashboard</a>
     <a href="/products/new" class="navbar-wagon-item navbar-wagon-link">Add a product</a>
 
