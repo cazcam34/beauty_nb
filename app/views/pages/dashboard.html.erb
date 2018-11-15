@@ -8,22 +8,7 @@
 	      <h1>Favs</h1>
 	        <div class="cards-container row">
 	          <% @fav_products.each do |product| %>
-	            <div class="col-xs-12 col-sm-6 col-md-4">
-		            <div class="card">
-		              <div class="card-img" style="background-image: url('<%= cl_image_path product.photo, crop: :fill %>');">
-
-		              </div>
-		              <div class="card-content">
-		                <div class="content-header">
-		                  <h4><%= product.name  %></h4>
-		                </div>
-		                <div class="content-footer">
-		                  <p><strong>$ <%= product.price %></strong></p>
-		                </div>
-		              </div>
-		            <%= link_to "", product_path(product), class: 'card-link' %>
-		            </div>
-	          	</div>
+	            <%= render "shared/card-full", product: product %>
 	          <% end %>
 	        </div>
 	    </div>
@@ -31,22 +16,7 @@
 	      <h1>Popular</h1>
 	        <div class="cards-container row">
 	          <% @popular_products.each do |product| %>
-	            <div class="col-xs-12 col-sm-6 col-md-4">
-		            <div class="card">
-		              <div class="card-img" style="background-image: url('<%= cl_image_path product.photo, crop: :fill %>');">
-
-		              </div>
-		              <div class="card-content">
-		                <div class="content-header">
-		                  <h4><%= product.name  %></h4>
-		                </div>
-		                <div class="content-footer">
-		                  <p><strong>$ <%= product.price %></strong></p>
-		                </div>
-		              </div>
-		            <%= link_to "", product_path(product), class: 'card-link' %>
-		            </div>
-	          	</div>
+	          	<%= render "shared/card-full", product: product %>
 	          <% end %>
 	        </div>
 	    </div>
