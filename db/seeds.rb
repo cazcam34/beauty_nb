@@ -33,7 +33,7 @@ data[0...30].each do |product|
 		new_product.save
 		products << new_product
 	rescue
-		puts "IMAGE DOESN'T WORK"
+		puts "One product skipped due to image..."
 	end
 end
 
@@ -42,7 +42,7 @@ puts 'Creating orders...'
 orders = []
 
 20.times do
-	order = Order.create(user_id: users.sample.id)
+	order = Order.create(user_id: users.sample.id, status: "complete")
 	orders << order
 end
 
