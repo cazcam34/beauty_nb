@@ -18,6 +18,14 @@ class PagesController < ApplicationController
  		@fav_products = products.uniq[0...6]
   end
 
+  def wishlist
+    favorites = Favorite.where(user_id: current_user)
+    @products = []
+    favorites.each do |fav|
+      @products << Product.find(fav.product_id)
+    end
+    @products.uniq!
+    
   def popular
   	products = Product.all
  		products_freq = Hash.new(0)
@@ -28,5 +36,6 @@ class PagesController < ApplicationController
  		products_freq.sort_by { |_key, value| value }.reverse[0...6].each do |product|
  			@popular_products << product[0]
  		end
+
   end
 end
