@@ -7,8 +7,20 @@
         <div class="cards-container row">
           <% @products.each do |product| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card">
+              <% if product.photo.present? %>
+                <div class="card-img" style="background-image: url('<%= cl_image_path product.photo, crop: :fill %>');">
+                </div>
+              <% else %>
+                <div class="card-img" style="background-image: url('<%= image_tag "coming-soon.png", height: 400, crop: :fill %>, crop: :fill %>');">
+                </div>
+              <% end %>
+              <div class="card-content">
+                <div class="content-header">
+                  <h4><%= product.name  %></h4>
               <div class="card">
                 <div class="card-img" style="background-image: url('<%= cl_image_path product.photo, crop: :fill %>');">
+
                 </div>
                 <div class="card-content">
                   <div class="content-header">
