@@ -13,19 +13,40 @@
   text-align: center;
 }
 
-
- #order_item_qty {
-    color:#43c0ac;
-    border: none;
-    font-size: 13px;
-    background: white;
-    font-weight: light;
-  }
-
-.table > tbody > tr > td {
-     vertical-align: middle;
+#order_item_qty {
+  color:#43c0ac;
+  border: none;
+  font-size: 13px;
+  background: white;
+  font-weight: light;
 }
 
-.checkout-area {
-  text-align: right;
+.cart-table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.cart-table > thead > tr > th {
+  vertical-align: middle;
+  font-weight: lighter;
+  font-size: 18px;
+  background: #d2d2d2;
+  color: white;
+}
+
+.cart-last-tr {
+  border-top: 2px solid #dddddd;
+}
+
+.remove-padding-form-group {
+  margin-bottom: none;
+}
+
+.table-hover>tbody>tr.no-hover:hover {
+    background-color: #ffffff;
+}
+
+.cart-header {
+  font-family: "Montserrat", "sans-serif";
+  text-align: center;
+  padding: 20px;
 }
