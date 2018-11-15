@@ -18,5 +18,11 @@ class PagesController < ApplicationController
   end
 
   def wishlist
+    favorites = Favorite.where(user_id: current_user)
+    @products = []
+    favorites.each do |fav|
+      @products << Product.find(fav.product_id)
+    end
+    @products.uniq!
   end
 end
