@@ -1,10 +1,7 @@
 import "bootstrap";
 
-// import { initSearchOnKeyUp } from '../components/search';
-// initSearchOnKeyUp();
-
-// import { clearFormAfterEnter } from '../components/search';
-// clearFormAfterEnter();
+import { sumTotal } from '../components/order';
+sumTotal();
 
 import { initSignInOnClick } from '../components/modal';
 initSignInOnClick();
