@@ -16,4 +16,7 @@ class PagesController < ApplicationController
  		end
  		@products.uniq!
   end
+
+  def wishlist
+  end
 end

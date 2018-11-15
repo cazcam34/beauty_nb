@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   end
   resources :order_items, only: [:edit, :update, :destroy]
   resources :orders, only: [:show]
+  resources :favorites, only: [:edit, :update, :destory]
 
   patch 'orders/:id', to: 'orders#checkout', as: :orders_checkout
   get 'orders/:id/complete', to: 'orders#complete', as: :orders_complete
+  get 'wishlist', to: 'pages#wishlist', as: :favorites
 end
