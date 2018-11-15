@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :order_items, only: [:create]
+    resources :favorites, only: [:create]
   end
   resources :order_items, only: [:edit, :update, :destroy]
   resources :orders, only: [:show]
