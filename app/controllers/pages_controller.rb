@@ -15,7 +15,7 @@ class PagesController < ApplicationController
  				products << product
  			end
  		end
- 		@fav_products = products.uniq[0...6]
+ 		@fav_products = products.uniq[0...8]
   end
 
   def wishlist
