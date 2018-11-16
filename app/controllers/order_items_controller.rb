@@ -13,8 +13,8 @@ class OrderItemsController < ApplicationController
       @order_item = OrderItem.create(product_id: params[:product_id], order_id: @order.id)
     end
     @order.save
-    flash[:notice] = 'Item has been added to cart'
-    redirect_to product_path(params[:product_id])
+    flash[:notice] = "This item has been saved to your cart"
+    redirect_to request.referrer
   end
 
   def update
