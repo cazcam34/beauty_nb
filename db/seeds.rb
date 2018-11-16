@@ -28,7 +28,7 @@ data = JSON.load(open("https://makeup-api.herokuapp.com/api/v1/products.json"))
 products = []
 random_price = [19, 25, 29, 35, 15, 21, 28, 32]
 
-data[0...60].each do |product|
+data[0...100].each do |product|
 	if product["price"].to_i < 10
 		product["price"] = random_price.sample
 		new_product = Product.new(name: product["name"], description: product["description"], price: product["price"].to_i, user_id: users.sample.id)
