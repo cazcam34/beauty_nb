@@ -3,6 +3,7 @@ require 'json'
 
 puts 'Cleaning database...'
 
+Favorite.destroy_all
 OrderItem.destroy_all
 Order.destroy_all
 Product.destroy_all
@@ -22,11 +23,11 @@ users = [
 
 puts 'Creating products...'
 
-data = JSON.load(open("https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick"))
+data = JSON.load(open("https://makeup-api.herokuapp.com/api/v1/products.json"))
 
 products = []
 
-data[0...30].each do |product|
+data[0...50].each do |product|
 	new_product = Product.new(name: product["name"], description: product["description"], price: product["price"].to_i, user_id: users.sample.id)
 	begin 
 		new_product.remote_photo_url = product["image_link"]
