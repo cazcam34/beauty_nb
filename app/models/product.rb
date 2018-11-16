@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :description, :price, presence: true
   validates :user_id, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 end
