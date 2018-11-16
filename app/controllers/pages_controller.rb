@@ -15,7 +15,7 @@ class PagesController < ApplicationController
  				products << product
  			end
  		end
- 		@fav_products = products.uniq[0...6]
+ 		@fav_products = products.uniq[0...8]
   end
 
   def wishlist
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
  			products_freq[product] = product.order_items.count
  		end
  		@popular_products = []
- 		products_freq.sort_by { |_key, value| value }.reverse[0...6].each do |product|
+ 		products_freq.sort_by { |_key, value| value }.reverse[0...12].each do |product|
  			@popular_products << product[0]
     end
  	end
