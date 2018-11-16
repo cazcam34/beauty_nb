@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :users
 
-  authenticated do
+  authenticated :user do
   	root :to => 'pages#dashboard', as: :authenticated
 	end
 
