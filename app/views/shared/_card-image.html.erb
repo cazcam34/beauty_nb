@@ -1,0 +1,11 @@
+<div class="col-xs-12 col-sm-4 col-md-3">
+	<div class="card-repurchase">
+		<%= link_to product_path(product) do %>
+		 	<div class="card-repurchase-img" style="background-image: url('<%= cl_image_path product.photo, crop: :fill %>');">
+	  		</div>
+		<% end %>
+			<div class="card-repurchase-action">
+				<%= link_to "Need", product_order_items_path(product), method: :post, class: "btn btn-primary" %>
+			</div>
+	</div>
+</div>
