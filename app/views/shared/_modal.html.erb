@@ -18,11 +18,9 @@
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
           <% end %>
-
           <%= render "devise/shared/links" %>
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> -->
         <%= link_to "Sign In", '#', class: 'btn btn-primary', id: 'sign-in-btn' %>
         <%= link_to "Cancel", "#", class: 'btn btn-default', data: { dismiss: "modal"} %>
       </div>
