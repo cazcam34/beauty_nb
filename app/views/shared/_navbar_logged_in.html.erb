@@ -5,10 +5,12 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="/" method="delete" class="navbar-wagon-item navbar-wagon-link">Dashboard</a>
+    <a href="/" method="delete" class="navbar-wagon-item navbar-wagon-link ">Dashboard</a>
     <a href="/products/new" class="navbar-wagon-item navbar-wagon-link">Add a product</a>
-    <%= link_to '<i class="fas fa-shopping-cart"></i>'.html_safe, order_path(current_user.find_or_create_pending_order) %>
-
+    <a href="#" id="popoverCart" class="navbar-wagon-item" data-container="body" data-trigger="hover focus" data-toggle="popover" data-placement="bottom" data-title="Your Cart" data-content="Vivamus
+  sagittis lacus vel augue laoreet rutrum faucibus.">
+   <i class="fas fa-shopping-cart"></i>
+  </a>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">

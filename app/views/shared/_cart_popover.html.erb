@@ -1,0 +1,18 @@
+
+<div class="popover" id="cartPopover" role="dialog" data-placement="bottom">
+  <div class="popover-dialog" role="document">
+    <div class="data-content">
+      <div class="data-header">
+        <button type="button" class="close" data-dismiss="popover" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="popover-title" id="popoverLabel">ITEM(S) IN YOUR CART</h4>
+      </div>
+      <div class="popover-body">
+        <p> testing testing </p>
+      </div>
+      <div class="popover-footer">
+        <%= link_to 'View Cart', order_path(current_user.find_or_create_pending_order) %>
+      </div>
+    </div>
+  </div>
+</div>
+
